@@ -1,0 +1,7 @@
+# Programiranje-Ogranicenja
+Seminarski rad iz predmeta Metodologija strucnog i naucnog rada. Implementiranje algoritama u phyton-u u paradigmi programiranja organicenja
+
+Biblioteku je moguce preuzeti na stranici https://labix.org/python-constraint
+Za instalaciju i koriscenje biblioteke potreban je Python2.
+Za koriscenje modula je potrebno uraditi:
+import constraint ili import * from constraint
