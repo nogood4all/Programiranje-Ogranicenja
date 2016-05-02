@@ -18,12 +18,16 @@ sudoku = [
 
 problem = Problem()
 
+# Postavljaju se vrednosti iz tablice
+
 for i in range(size ** 2):
     for j in range(size ** 2):
         if sudoku[i][j] == 0:
             problem.addVariable((i, j), range(1, size ** 2 + 1))
         else:
             problem.addVariable((i, j), [sudoku[i][j]])
+
+# Postavljaju se ogranicenja da vrednosti moraju biti jedinstvene po kolonama i vrstama.
 
 for i in range(0, size ** 2):
     vertical = []
@@ -34,6 +38,8 @@ for i in range(0, size ** 2):
     problem.addConstraint(AllDifferentConstraint(), vertical)
     problem.addConstraint(AllDifferentConstraint(), horizontal)
 
+# Postavljaju se ogranicenja da vrednosti u kvadratu moraju biti jedinstvene.
+
 for i in range(0, size):
     for j in range(0, size):
         square = []
@@ -42,6 +48,7 @@ for i in range(0, size):
                 square.append((size * i + k, size * j + l))
         problem.addConstraint(AllDifferentConstraint(), square)
 
+# Pronalazenje svih resenja igre. Ako je igra dobro napravljena, resenje mora da bude jedinstveno.
 
 for solution in problem.getSolutions():
     solved = dict()
