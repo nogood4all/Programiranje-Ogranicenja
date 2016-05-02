@@ -4,4 +4,4 @@ Seminarski rad iz predmeta Metodologija strucnog i naucnog rada. Implementiranje
 Biblioteku je moguce preuzeti na stranici https://labix.org/python-constraint
 Za instalaciju i koriscenje biblioteke potreban je Python2.
 Za koriscenje modula je potrebno uraditi:
-import constraint ili import * from constraint
+import constraint ili from constraint import *
